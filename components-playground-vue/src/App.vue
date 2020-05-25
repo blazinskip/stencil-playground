@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <input v-model="message" placeholder="edit me" />
+    <test-vowel-input v-model="message" placeholder="edit me"></test-vowel-input>
     <p>Message is: {{ message }}</p>
   </div>
 </template>

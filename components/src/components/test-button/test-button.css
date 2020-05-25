@@ -1,0 +1,29 @@
+:host {
+  display: inline-block;
+}
+
+
+:host .button {
+  margin-top: 1rem;
+  padding: 8px 20px;
+  font-size: 14px;
+  line-height: 16px;
+  background: #0066cc;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: #fff;
+}
+
+:host .button--large {
+  padding: 12px 32px;
+  font-size: 18px;
+  line-height: 21px;
+}
+
+
+:host .button--small {
+  padding: 6px 16px;
+  font-size: 12px;
+  line-height: 14px;
+}
+

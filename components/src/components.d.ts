@@ -6,11 +6,20 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface TestButton {
+        "size": "small" | "default" | "large";
+    }
     interface TestVowelInput {
         "value": string;
     }
 }
 declare global {
+    interface HTMLTestButtonElement extends Components.TestButton, HTMLStencilElement {
+    }
+    var HTMLTestButtonElement: {
+        prototype: HTMLTestButtonElement;
+        new (): HTMLTestButtonElement;
+    };
     interface HTMLTestVowelInputElement extends Components.TestVowelInput, HTMLStencilElement {
     }
     var HTMLTestVowelInputElement: {
@@ -18,14 +27,20 @@ declare global {
         new (): HTMLTestVowelInputElement;
     };
     interface HTMLElementTagNameMap {
+        "test-button": HTMLTestButtonElement;
         "test-vowel-input": HTMLTestVowelInputElement;
     }
 }
 declare namespace LocalJSX {
+    interface TestButton {
+        "onClicked"?: (event: CustomEvent<string>) => void;
+        "size"?: "small" | "default" | "large";
+    }
     interface TestVowelInput {
         "value"?: string;
     }
     interface IntrinsicElements {
+        "test-button": TestButton;
         "test-vowel-input": TestVowelInput;
     }
 }
@@ -33,6 +48,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "test-button": LocalJSX.TestButton & JSXBase.HTMLAttributes<HTMLTestButtonElement>;
             "test-vowel-input": LocalJSX.TestVowelInput & JSXBase.HTMLAttributes<HTMLTestVowelInputElement>;
         }
     }

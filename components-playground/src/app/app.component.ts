@@ -15,4 +15,9 @@ export class AppComponent implements OnInit {
     this.formControl.statusChanges.subscribe(console.log);
     this.formControl.valueChanges.subscribe(console.log);
   }
+
+  testButtonClick($event) {
+    console.log($event);
+  }
+
 }

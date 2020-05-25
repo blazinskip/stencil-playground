@@ -1,3 +1,5 @@
 <test-vowel-input [formControl]="formControl" ngDefaultControl></test-vowel-input>
-<span>Message is: {{formControl.value
-  }}</span>
+<p>Message is: {{formControl.value}}</p>
+<test-button size="small" (clicked)="testButtonClick($event)">Button</test-button>
+<test-button (clicked)="testButtonClick($event)">Button</test-button>
+<test-button size="large" (clicked)="testButtonClick($event)">Button</test-button>
